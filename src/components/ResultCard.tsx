@@ -1,10 +1,16 @@
+import { useState } from 'react';
+
 interface Props {
   url: string;
 }
 
 export default function ResultCard({ url }: Props) {
+  const [copied, setCopied] = useState(false);
+
   async function copy() {
     await navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   }
 
   if (!url) return null;
@@ -16,7 +22,7 @@ export default function ResultCard({ url }: Props) {
         className="mt-2 bg-green-600 text-white px-3 py-1 rounded"
         onClick={copy}
       >
-        Copiar
+        {copied ? '¡Copiado!' : 'Copiar'}
       </button>
     </div>
   );
