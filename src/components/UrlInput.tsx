@@ -37,10 +37,10 @@ export default function UrlInput({ onClean }: Props) {
 
   return (
     <div className="flex flex-col w-full gap-1">
-      <div className="flex gap-2 w-full">
+      <div className="flex gap-2 w-full flex-col sm:flex-row">
         <input
           type="text"
-          className="flex-1 border rounded px-3 py-2 dark:bg-gray-800 dark:text-white"
+          className="flex-1 border rounded px-3 py-2 dark:bg-gray-800 dark:text-white transition-colors hover:border-gray-400 dark:hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={value}
           onChange={(e) => {
             setValue(e.target.value);
@@ -52,7 +52,7 @@ export default function UrlInput({ onClean }: Props) {
           placeholder="Pega tu URL"
         />
         <button
-          className="bg-blue-600 text-white px-4 py-2 rounded"
+          className="bg-blue-600 text-white px-4 py-2 rounded transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto disabled:opacity-50"
           onClick={handleClean}
           disabled={disabled}
         >
