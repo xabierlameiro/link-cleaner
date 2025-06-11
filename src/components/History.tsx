@@ -8,6 +8,15 @@ export default function History() {
     setItems(stored);
   }, []);
 
+  async function copy(url: string) {
+    await navigator.clipboard.writeText(url);
+  }
+
+  function clear() {
+    localStorage.removeItem('history');
+    setItems([]);
+  }
+
   if (!items.length) return null;
 
   return (
@@ -15,11 +24,22 @@ export default function History() {
       <h2 className="font-semibold mb-2">Historial</h2>
       <ul className="space-y-1">
         {items.map((url, i) => (
-          <li key={i} className="text-sm break-all text-gray-600 dark:text-gray-300">
-            {url}
+          <li key={i}>
+            <button
+              onClick={() => copy(url)}
+              className="text-sm break-all text-blue-600 hover:underline dark:text-blue-400"
+            >
+              {url}
+            </button>
           </li>
         ))}
       </ul>
+      <button
+        className="mt-2 text-sm text-red-600 hover:underline"
+        onClick={clear}
+      >
+        Limpiar historial
+      </button>
     </div>
   );
 }
