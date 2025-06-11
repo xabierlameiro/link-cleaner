@@ -1,0 +1,21 @@
+{
+  "name": "link-cleaner",
+  "version": "1.0.0",
+  "description": "Elimina parámetros de seguimiento y limpia cualquier URL en un solo clic",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "type": "module",
+  "dependencies": {
+    "@astrojs/react": "^3.6.2",
+    "@tailwindcss/vite": "^4.1.9",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "astro": "^4.15.12",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.1.9"
+  }
+}
