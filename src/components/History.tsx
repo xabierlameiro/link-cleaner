@@ -4,8 +4,12 @@ export default function History() {
   const [items, setItems] = useState<string[]>([]);
 
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem('history') || '[]');
-    setItems(stored);
+    const raw = localStorage.getItem('history') || '[]';
+    try {
+      setItems(JSON.parse(raw));
+    } catch {
+      setItems([]);
+    }
   }, []);
 
   async function copy(url: string) {
