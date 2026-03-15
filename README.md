@@ -1,23 +1,46 @@
-# link-cleaner
+# Link Cleaner
 
-Aplicación web minimalista para limpiar cualquier URL de parámetros de seguimiento (utm_source, gclid, fbclid, etc.) usando Astro, TypeScript y TailwindCSS.
+A fast URL cleaning tool that strips tracking parameters (UTM tags, affiliate IDs, click trackers) from URLs, built with Astro 5, React 19, and Tailwind CSS v4.
 
-## Demo
+[![CI](https://github.com/xabierlameiro/link-cleaner/actions/workflows/ci.yml/badge.svg)](https://github.com/xabierlameiro/link-cleaner/actions/workflows/ci.yml)
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/user/link-cleaner)
+## Features
 
-## Instalación
+- 🧹 Removes common tracking parameters (utm_*, fbclid, gclid, etc.)
+- ⚡ Instant cleaning — no server round-trip
+- 📋 One-click copy to clipboard
+- 🖥️ Zero-dependency URL parsing
+
+## Stack
+
+| Layer           | Choice             |
+| --------------- | ------------------ |
+| Framework       | Astro 5            |
+| UI              | React 19           |
+| Styling         | Tailwind CSS v4    |
+| Testing         | Vitest             |
+| Package manager | npm                |
+| Branch          | `trunk`            |
+
+## Getting started
 
 ```bash
+git clone https://github.com/xabierlameiro/link-cleaner.git
+cd link-cleaner
 npm install
 npm run dev
 ```
 
-## Comandos
+Open [http://localhost:4321](http://localhost:4321).
 
-- `npm run dev` – Inicia el entorno de desarrollo.
-- `npm run build` – Genera la versión de producción.
+## Scripts
 
-## Licencia
+| Script          | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Start development server |
+| `npm run build` | Production build         |
+| `npm test`      | Vitest unit tests        |
 
-MIT
+## License
+
+[MIT](./LICENSE) — © 2026 Xabier Lameiro
